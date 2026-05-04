@@ -1,311 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Makro 3D - Professional 3D Printing Services</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: bold;
-            text-decoration: none;
-            color: white;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: opacity 0.3s;
-        }
-
-        .nav-links a:hover {
-            opacity: 0.8;
-        }
-
-        .cta-button {
-            background: #ff6b6b;
-            padding: 0.8rem 1.5rem;
-            border-radius: 25px;
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(255,107,107,0.4);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(102,126,234,0.9), rgba(118,75,162,0.9)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1.5" fill="white" opacity="0.05"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>');
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            margin-top: 70px;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease-out;
-        }
-
-        .hero-content p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            max-width: 600px;
-            animation: fadeInUp 1s ease-out 0.2s both;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Services Section */
-        .services {
-            padding: 100px 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #333;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        /* About Section */
-        .about {
-            background: #f8f9fa;
-            padding: 100px 2rem;
-        }
-
-        .about-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: #333;
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 100px 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-
-        .contact-info h3 {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            color: #333;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-item strong {
-            min-width: 150px;
-        }
-
-        .contact-form {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #e9ecef;
-            border-radius: 10px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #667eea;
-        }
-
-        /* Footer */
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .about-container,
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .services {
-                padding: 80px 1rem;
-            }
-        }
-    </style>
+    <title>Makro 3D - Jasa Printing 3D Profesional</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <!-- Header -->
     <header>
         <nav>
-            <a href="#" class="logo">Makro 3D</a>
+            <a href="#" class="logo">
+                <img src="assets/images/logo.png" alt="Makro 3D" class="logo-img">
+                <span>Makro 3D</span>
+            </a>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#services">Layanan</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#contact">Kontak</a></li>
             </ul>
-            <a href="#contact" class="cta-button">Get Quote</a>
+            <a href="#contact" class="cta-button">Dapatkan Penawaran</a>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Precision 3D Printing Services</h1>
-            <p>Transform your ideas into reality with our state-of-the-art 3D printing technology. Fast, reliable, and high-quality prints for all your needs.</p>
-            <a href="#contact" class="cta-button">Start Your Project</a>
+            <h1>Jasa Printing 3D Profesional</h1>
+            <p>Wujudkan ide Anda menjadi nyata dengan teknologi printing 3D terkini. Cepat, terpercaya, dan kualitas tinggi untuk semua kebutuhan Anda.</p>
+            <a href="#contact" class="cta-button">Mulai Proyek Anda</a>
         </div>
     </section>
 
     <!-- Services Section -->
     <section id="services" class="services">
-        <h2 class="section-title">Our Services</h2>
+        <h2 class="section-title">Layanan Kami</h2>
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">🖨️</div>
-                <h3>FDM Printing</h3>
-                <p>High-strength parts using Fused Deposition Modeling. Perfect for prototypes, functional parts, and custom manufacturing.</p>
+                <h3>Printing FDM</h3>
+                <p>Bagian kuat menggunakan Fused Deposition Modeling. Cocok untuk prototipe, sparepart fungsional, dan manufaktur custom.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">💎</div>
-                <h3>Resin Printing</h3>
-                <p>Ultra-fine details and smooth surfaces with SLA/DLP resin printing. Ideal for jewelry, miniatures, and dental applications.</p>
+                <h3>Printing Resin</h3>
+                <p>Detail halus dan permukaan licin dengan SLA/DLP resin printing. Ideal untuk perhiasan, miniatur, dan aplikasi dental.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">⚙️</div>
-                <h3>Custom Design</h3>
-                <p>Need help with your 3D model? Our experts can design from scratch or optimize your existing files for perfect prints.</p>
+                <h3>Desain Custom</h3>
+                <p>Butuh bantuan 3D model? Tim ahli kami bisa desain dari nol atau optimasi file existing untuk hasil print sempurna.</p>
             </div>
             <div class="service-card">
                 <div class="service-icon">📦</div>
                 <h3>Post-Processing</h3>
-                <p>Professional finishing services including sanding, painting, dyeing, and assembly for production-ready parts.</p>
+                <p>Layanan finishing profesional termasuk amplas, pengecatan, pewarnaan, dan perakitan untuk produk siap produksi.</p>
             </div>
         </div>
     </section>
@@ -314,100 +64,74 @@
     <section id="about" class="about">
         <div class="about-container">
             <div class="about-text">
-                <h2>Why Choose Makro 3D?</h2>
-                <p>With years of experience in 3D printing, we deliver exceptional quality and service. Our advanced printers and expert team ensure your projects are completed on time and exceed expectations.</p>
-                <ul style="margin-top: 1.5rem; padding-left: 1.5rem;">
-                    <li>✅ Fast turnaround times</li>
-                    <li>✅ Multiple material options</li>
-                    <li>✅ Competitive pricing</li>
-                    <li>✅ Quality guarantee</li>
+                <h2>Mengapa Pilih Makro 3D?</h2>
+                <p>Dengan pengalaman bertahun-tahun di printing 3D, kami memberikan kualitas dan layanan terbaik. Printer canggih dan tim ahli memastikan proyek Anda selesai tepat waktu dan melebihi ekspektasi.</p>
+                <ul>
+                    <li>✅ Pengerjaan cepat</li>
+                    <li>✅ Banyak pilihan material</li>
+                    <li>✅ Harga kompetitif</li>
+                    <li>✅ Jaminan kualitas</li>
                 </ul>
             </div>
-            <div style="text-align: center;">
-                <div style="font-size: 4rem; margin-bottom: 1rem;">🎯</div>
-                <h3>100% Satisfaction</h3>
-                <p>Customer satisfaction is our top priority</p>
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">1000+</div>
+                    <div>Proyek Selesai</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">99%</div>
+                    <div>Kepuasan Pelanggan</div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact" class="contact">
-        <h2 class="section-title">Get Your Free Quote</h2>
+        <h2 class="section-title">Dapatkan Penawaran Gratis</h2>
         <div class="contact-grid">
             <div class="contact-info">
-                <h3>Contact Information</h3>
+                <h3>Informasi Kontak</h3>
                 <div class="contact-item">
                     <strong>📧 Email:</strong>
                     <span>info@makro3d.com</span>
                 </div>
                 <div class="contact-item">
-                    <strong>📱 Phone:</strong>
-                    <span>+1 (555) 123-4567</span>
+                    <strong>📱 WhatsApp:</strong>
+                    <span>+62 812-3456-7890</span>
                 </div>
                 <div class="contact-item">
-                    <strong>🕒 Hours:</strong>
-                    <span>Mon-Fri: 9AM-6PM</span>
+                    <strong>🕒 Jam Operasional:</strong>
+                    <span>Senin-Jumat: 09.00-18.00</span>
                 </div>
                 <div class="contact-item">
-                    <strong>📍 Location:</strong>
-                    <span>Your City, State 12345</span>
+                    <strong>📍 Lokasi:</strong>
+                    <span>Jakarta, Indonesia</span>
                 </div>
             </div>
             <form class="contact-form">
                 <div class="form-group">
-                    <input type="text" placeholder="Your Name" required>
+                    <input type="text" placeholder="Nama Lengkap" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" placeholder="Your Email" required>
+                    <input type="email" placeholder="Email Anda" required>
                 </div>
                 <div class="form-group">
-                    <input type="text" placeholder="Project Description" required>
+                    <input type="text" placeholder="Deskripsi Proyek" required>
                 </div>
                 <div class="form-group">
-                    <textarea rows="5" placeholder="Tell us more about your project..."></textarea>
+                    <textarea rows="5" placeholder="Ceritakan lebih detail tentang proyek Anda..."></textarea>
                 </div>
-                <button type="submit" class="cta-button" style="width: 100%; font-size: 1.1rem;">Send Message</button>
+                <button type="submit" class="cta-button">Kirim Pesan</button>
             </form>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Makro 3D. All rights reserved. | Professional 3D Printing Services</p>
+        <p>&copy; 2024 Makro 3D. Hak Cipta Dilindungi. | Jasa Printing 3D Terpercaya</p>
     </footer>
 
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Form submission
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you! Your message has been sent. We\'ll get back to you soon!');
-            this.reset();
-        });
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.background = 'rgba(102,126,234,0.95)';
-            } else {
-                header.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
-            }
-        });
-    </script>
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
