@@ -14,7 +14,7 @@ body {
 
 /* Header - Black */
 header {
-    background: #1a1a1a;
+     background: #1a1a1a;
     color: white;
     padding: 1rem 0;
     position: fixed;
@@ -23,6 +23,7 @@ header {
     z-index: 1000;
     box-shadow: 0 2px 20px rgba(255,255,255,0.1);
     backdrop-filter: blur(10px);
+    transition: all 0.3s ease; /* TAMBAHAN INI */
 }
 
 nav {

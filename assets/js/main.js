@@ -16,12 +16,19 @@ document.querySelector('.contact-form').addEventListener('submit', function(e) {
     this.reset();
 });
 
-// Navbar scroll effect
+// NAVBAR SCROLL EFFECT - HITAM KE ABU-ABU TERANG
 window.addEventListener('scroll', function() {
     const header = document.querySelector('header');
+    
     if (window.scrollY > 100) {
-        header.style.background = 'rgba(102,126,234,0.95)';
+        // Abu-abu terang saat scroll
+        header.style.background = 'rgba(40, 40, 40, 0.98)';
+        header.style.backdropFilter = 'blur(20px)';
+        header.style.boxShadow = '0 5px 30px rgba(255,255,255,0.15)';
     } else {
-        header.style.background = 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)';
+        // Hitam pekat saat atas
+        header.style.background = '#1a1a1a';
+        header.style.backdropFilter = 'blur(10px)';
+        header.style.boxShadow = '0 2px 20px rgba(255,255,255,0.1)';
     }
 });
