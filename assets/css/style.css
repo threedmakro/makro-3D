@@ -102,13 +102,13 @@ nav {
 /* Hero Section - Dark Gray */
 .hero {
     background: linear-gradient(135deg, #111111 0%, #222222 50%, #333333 100%);
-    height: 100vh;
+    min-height: 100vh; /* Ganti height: 100vh → min-height */
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
     margin-top: 70px;
     position: relative;
+    padding: 2rem 0; /* Tambah padding */
 }
 
 .hero::before {
@@ -124,8 +124,18 @@ nav {
     pointer-events: none;
 }
 
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    width: 100%;
+    padding: 0 2rem;
+    gap: 4rem;
+}
+
 .hero-content h1 {
-    font-size: 4rem;
+    font-size: 3.5rem; /* Dikecilkan biar fit */
     margin-bottom: 1.5rem;
     font-weight: 300;
     letter-spacing: 2px;
@@ -135,9 +145,8 @@ nav {
 }
 
 .hero-content p {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     margin-bottom: 2.5rem;
-    max-width: 700px;
     opacity: 0.9;
     animation: fadeInUp 1s ease-out 0.2s both;
 }
