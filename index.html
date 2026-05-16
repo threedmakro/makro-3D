@@ -1,50 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://makro-3-d.vercel.app/">
     <meta property="og:title" content="MAKRO 3D JAKARTA - 3D PRINT SOLUTION">
     <meta property="og:description" content="Jasa Printing 3D & Desain 3D Terpercaya di Indonesia. Profesional dengan teknologi FDM, melayani berbagai kebutuhan industri, pendidikan & riset.">
     <meta property="og:image" content="https://makro-3-d.vercel.app/assets/images/thumbnail-share.png">
 
-    <!-- Twitter Card -->   
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://makro-3-d.vercel.app/">
     <meta name="twitter:title" content="MAKRO 3D JAKARTA - 3D PRINT SOLUTION">
     <meta name="twitter:description" content="Jasa Printing 3D & Desain 3D Terpercaya di Indonesia. Profesional dengan teknologi FDM, melayani berbagai kebutuhan industri, pendidikan & riset.">
     <meta name="twitter:image" content="https://makro-3-d.vercel.app/assets/images/thumbnail-share.png">
 
-    <!-- Favicons -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
     <link rel="manifest" href="assets/images/site.webmanifest">
 
     <title>MAKRO 3D JAKARTA - 3D PRINT SOLUTION</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <!-- Header -->
     <header>
         <nav>
             <a href="#" class="logo">
                 <img src="assets/images/logo.png" alt="MAKRO 3D" class="logo-img">
-                <span></span>
             </a>
+            
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
             <ul class="nav-links">
                 <li><a href="#home">Beranda</a></li>
                 <li><a href="#about">Profil</a></li>
                 <li><a href="#services">Layanan</a></li>
                 <li><a href="#contact">Kontak</a></li>
             </ul>
-            <a href="#contact" class="cta-button">Hubungi Kami</a>
+            
+            <a href="#contact" class="cta-button nav-cta">Hubungi Kami</a>
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-bg"></div>
         <div class="hero-content">
@@ -75,70 +83,64 @@
     </section>
 
     <div class="gallery-section">
-                <h2 class="section-title gallery-title">Portofolio Kami</h2>
-                <div class="scrolling-gallery">
-                    <div class="gallery-track">
-                        <!-- Slide 1 -->
-                        <div class="gallery-item">
-                            <img src="assets/images/gallery/gallery8.png" alt="Prototipe Industri">
-                            <div class="gallery-overlay">
-                                <h4>Putin Statue Miniature</h4>
-                                <p>FDM - ABS Material</p>
-                            </div>
-                        </div>
-                        <!-- Slide 2 -->
-                        <div class="gallery-item">
-                            <img src="assets/images/gallery/gallery2.png" alt="Model FDM Detail">
-                            <div class="gallery-overlay">
-                                <h4>Bulk Order Mini Statue</h4>
-                                <p>FDM Material</p>
-                            </div>
-                        </div>
-                        <!-- Slide 3 -->
-                        <div class="gallery-item">
-                            <img src="assets/images/gallery/gallery9.png" alt="Otomotif Custom">
-                            <div class="gallery-overlay">
-                                <h4>Piagam Kecil Berwarna</h4>
-                                <p>PETG High Strength</p>
-                            </div>
-                        </div>
-                        <!-- Slide 4 -->
-                        <div class="gallery-item">
-                            <img src="assets/images/gallery/gallery4.png" alt="Medis Dental">
-                            <div class="gallery-overlay">
-                                <h4>Piagam Acara</h4>
-                                <p>FDM Biocompatible</p>
-                            </div>
-                        </div>
-                        <!-- Slide 5 -->
-                        <div class="gallery-item">
-                            <img src="assets/images/gallery/gallery5.png" alt="Custom Hobi">
-                            <div class="gallery-overlay">
-                                <h4>Action Figure Game</h4>
-                                <p>FDM + Post Processing</p>
-                            </div>
-                        </div>
-                        <!-- Slide 6 - DUPLIKAT untuk seamless loop -->
-                        <div class="gallery-item">
-                            <img src="assets/images/gallery/gallery6.png" alt="Prototipe Industri">
-                            <div class="gallery-overlay">
-                                <h4>Trump Mini Statue</h4>
-                                <p>FDM - ABS Material</p>
-                            </div>
-                        </div>
-                        <!-- Slide 7 - DUPLIKAT -->
-                        <div class="gallery-item">
-                            <img src="assets/images/gallery/gallery7.png" alt="Model FDM Detail">
-                            <div class="gallery-overlay">
-                                <h4>Multiple Bulk Order</h4>
-                                <p>FDM Material</p>
-                            </div>
-                        </div>
+        <h2 class="section-title gallery-title">Portofolio Kami</h2>
+        
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide gallery-item">
+                    <img src="assets/images/gallery/gallery8.png" alt="Prototipe Industri">
+                    <div class="gallery-overlay">
+                        <h4>Putin Statue Miniature</h4>
+                        <p>FDM - ABS Material</p>
+                    </div>
+                </div>
+                <div class="swiper-slide gallery-item">
+                    <img src="assets/images/gallery/gallery2.png" alt="Model FDM Detail">
+                    <div class="gallery-overlay">
+                        <h4>Bulk Order Mini Statue</h4>
+                        <p>FDM Material</p>
+                    </div>
+                </div>
+                <div class="swiper-slide gallery-item">
+                    <img src="assets/images/gallery/gallery9.png" alt="Otomotif Custom">
+                    <div class="gallery-overlay">
+                        <h4>Piagam Kecil Berwarna</h4>
+                        <p>PETG High Strength</p>
+                    </div>
+                </div>
+                <div class="swiper-slide gallery-item">
+                    <img src="assets/images/gallery/gallery4.png" alt="Medis Dental">
+                    <div class="gallery-overlay">
+                        <h4>Piagam Acara</h4>
+                        <p>FDM Biocompatible</p>
+                    </div>
+                </div>
+                <div class="swiper-slide gallery-item">
+                    <img src="assets/images/gallery/gallery5.png" alt="Custom Hobi">
+                    <div class="gallery-overlay">
+                        <h4>Action Figure Game</h4>
+                        <p>FDM + Post Processing</p>
+                    </div>
+                </div>
+                <div class="swiper-slide gallery-item">
+                    <img src="assets/images/gallery/gallery6.png" alt="Prototipe Industri">
+                    <div class="gallery-overlay">
+                        <h4>Trump Mini Statue</h4>
+                        <p>FDM - ABS Material</p>
+                    </div>
+                </div>
+                <div class="swiper-slide gallery-item">
+                    <img src="assets/images/gallery/gallery7.png" alt="Model FDM Detail">
+                    <div class="gallery-overlay">
+                        <h4>Multiple Bulk Order</h4>
+                        <p>FDM Material</p>
                     </div>
                 </div>
             </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
 
-    <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
             <div class="about-grid">
@@ -193,7 +195,6 @@
         </div>
     </section>
 
-    <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
             <h2 class="section-title">Layanan Kami</h2>
@@ -217,7 +218,6 @@
         </div>
     </section>
 
-    <!-- Target Market Section -->
     <section id="market" class="about">
         <div class="container">
             <h2 class="section-title">Bidang yang Kami Layani</h2>
@@ -256,7 +256,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <h2 class="section-title">Hubungi Kami</h2>
@@ -298,7 +297,6 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <p>© 2026 MAKRO 3D JAKARTA. All rights reserved.</p>
@@ -306,6 +304,12 @@
         </div>
     </footer>
 
+    <a href="https://wa.me/6287899461959?text=Halo%20MAKRO%203D,%20saya%20ingin%20konsultasi%20jasa%203D%20print." class="floating-wa" target="_blank" rel="noopener noreferrer">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
     <script src="assets/js/main.js"></script>
 </body>
 </html>
